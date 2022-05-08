@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">平衡宝</string>
+    <string name="text_account">账号</string>
+    <string name="text_password">密码</string>
+    <string name="text_login">登录</string>
+    <string name="text_name">名称</string>
+    <string name="text_length">长度(mm)</string>
+    <string name="text_width">宽度(mm)</string>
+    <string name="text_height">高度(mm)</string>
+    <string name="text_weight">重量(mm)</string>
+    <string name="text_add">添加</string>
+</resources>

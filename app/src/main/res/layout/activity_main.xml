@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/black"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:layout_height="wrap_content">
+
+    </com.google.android.material.appbar.MaterialToolbar>
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="horizontal" android:layout_height="match_parent">
+        <LinearLayout
+                android:showDividers="middle"
+                android:divider="@drawable/divider"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="20dp"
+                android:background="#F8F7F5"
+                android:orientation="vertical"
+                android:layout_width="260dp"
+                android:layout_height="match_parent">
+            <com.google.android.material.button.MaterialButton
+                    android:text="添加仓库"
+                    style="@style/AppButton" android:id="@+id/btn_add_repository"/>
+            <com.google.android.material.button.MaterialButton
+                    android:text="添加盒子"
+                    style="@style/AppButton" android:id="@+id/btn_add_box"/>
+            <com.google.android.material.button.MaterialButton
+                    android:text="导入模版"
+                    style="@style/AppButton" android:id="@+id/btn_import"/>
+            <com.google.android.material.button.MaterialButton
+                    android:text="存储数据"
+                    style="@style/AppButton" android:id="@+id/btn_save"/>
+            <com.google.android.material.button.MaterialButton
+                    android:text="生成方案"
+                    style="@style/AppButton" android:id="@+id/btn_product"/>
+
+        </LinearLayout>
+        <com.donkingliang.groupedadapter.widget.StickyHeaderLayout
+                android:id="@+id/sticky_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:background="@color/white"
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </com.donkingliang.groupedadapter.widget.StickyHeaderLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
