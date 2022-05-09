@@ -1,5 +1,9 @@
 package com.xujhin.box.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.util.StringJoiner
+
 
 sealed class BaseEntity(
     open val name: String,
@@ -8,19 +12,25 @@ sealed class BaseEntity(
     open val width: String,
     open val length: String
 ) {
+    @Entity(tableName = "repository")
     data class Repository(
-        override val name: String,
-        override val weight: String,
-        override val height: String,
-        override val width: String,
-        override val length: String
+        @PrimaryKey(autoGenerate = true)
+        val id: Int = 0,
+        override var name: String,
+        override var weight: String,
+        override var height: String,
+        override var width: String,
+        override var length: String
     ) : BaseEntity(name, weight, height, width, length)
 
+    @Entity(tableName = "box")
     data class Box(
-        override val name: String,
-        override val weight: String,
-        override val height: String,
-        override val width: String,
-        override val length: String
+        @PrimaryKey(autoGenerate = true)
+        val id: Int = 0,
+        override var name: String,
+        override var weight: String,
+        override var height: String,
+        override var width: String,
+        override var length: String
     ) : BaseEntity(name, weight, height, width, length)
 }

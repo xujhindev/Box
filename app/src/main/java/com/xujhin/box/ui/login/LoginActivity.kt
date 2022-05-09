@@ -4,6 +4,8 @@ import com.xujhin.box.utils.sp.SpHelper
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import com.gyf.immersionbar.ImmersionBar
 import com.xujhin.box.databinding.ActivityLoginBinding
 import com.xujhin.box.ext.navigateTo
 import com.xujhin.box.ext.showToast
@@ -13,13 +15,19 @@ import com.xujhin.box.utils.sp.SpKey
 class LoginActivity : AppCompatActivity() {
     companion object {
         const val DEFAULT_ACCOUNT = "account"
-        const val DEFAULT_PWD = "password1"
+        const val DEFAULT_PWD = "password"
     }
 
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
+        ImmersionBar.with(this)
+            .transparentStatusBar()
+            .statusBarDarkFont(true)
+            .fitsSystemWindows(true)
+            .init()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViewAndEvent()
@@ -31,9 +39,9 @@ class LoginActivity : AppCompatActivity() {
             binding.edtAccount.setText(SpHelper.getString(SpKey.ACCOUNT))
         }
 
-        binding.edtPwd.setOnEditorActionListener { v, actionId, event ->
-            return@setOnEditorActionListener executeLogin()
-        }
+//        binding.edtPwd.setOnEditorActionListener { v, actionId, event ->
+//            return@setOnEditorActionListener executeLogin()
+//        }
         binding.btnLogin.setOnClickListener {
             if (executeLogin()) {
                 return@setOnClickListener

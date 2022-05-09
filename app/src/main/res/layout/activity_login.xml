@@ -28,7 +28,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_pwd"
-                android:imeActionLabel="@string/text_login"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
